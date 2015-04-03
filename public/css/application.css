@@ -20,6 +20,11 @@ footer, header, nav, section, audio, video {
   height: 0;
 }
 
+#coin {
+  height: 10%;
+  width: 10%;
+  margin-left:
+}
 
 body{
   font-family: Helvetica, Arial, sans-serif;

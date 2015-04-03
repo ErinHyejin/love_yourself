@@ -17,14 +17,16 @@ require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'byebug' if development?
 
 require 'erb'
 require 'faker'
 require 'json'
-
+require 'vacuum'
 require 'httparty'
 require 'dotenv'
 require 'time'
+
 Dotenv.load
 
 # Some helper constants for path-centric logic

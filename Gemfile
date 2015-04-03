@@ -17,7 +17,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
-
+gem 'vacuum'
 gem 'bcrypt'
 gem 'httparty'
 gem 'dotenv'
@@ -32,4 +32,6 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
+  gem 'byebug'
 end
+

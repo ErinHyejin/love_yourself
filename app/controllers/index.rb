@@ -68,17 +68,37 @@ get '/todos/:id/delete' do
   redirect '/'
 end
 
+
 get '/shop' do
   @current_user = User.find(session[:id])
+    # p response = HTTParty.get("http://free.apisigning.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=#{ENV['amazon_access_key_id']}&Operation=ItemSearch&Keywords=#{keyword}&ResponseGroup=Images,ItemAttributes&SearchIndex=All&MinimumPrice=4000&MaximumPrice=5000&Timestamp=#{Time.now.utc.iso8601}")
+  #&Signature=[Request Signature]
+  #
+    @items = session[:searched_items]
+
+  erb :shop
+end
+
+
+post '/shop' do
+  request = Vacuum.new
+  request.configure(
+    aws_access_key_id: ENV['amazon_access_key_id'],
+    aws_secret_access_key: ENV['amazon_secret_access_key'],
+    associate_tag: 'tag'
+)
 
   if (params[:keyword])
     keyword = params[:keyword]
-    p response = HTTParty.get("http://free.apisigning.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=#{ENV['amazon_access_key_id']}&Operation=ItemSearch&Keywords=#{keyword}&ResponseGroup=Images,ItemAttributes&SearchIndex=All&MinimumPrice=4000&MaximumPrice=5000&Timestamp=#{Time.now.utc.iso8601}")
-  #&Signature=[Request Signature]
-  #
+    response = request.item_search(
+      query: {
+        'Keywords' => keyword,
+        'SearchIndex' => 'All'
+      }
+      )
     begin
-      @items = response
-      .parsed_response["ItemSearchResponse"]["Items"]["Item"]
+
+      session[:searched_items] = response.parsed_response["ItemSearchResponse"]["Items"]["Item"]
       .select do |item|
         item and item.include?("MediumImage") and item["ItemAttributes"]["ListPrice"]
       end
@@ -94,13 +114,12 @@ get '/shop' do
       @items = []
       @error = "No items found!"
     end
-  else
-    @items = []
+    byebug
+  # else
+  #   @items = []
   end
-
-  erb :shop
+  redirect '/shop'
 end
-
 
 # post '/users/:id' do
 #   tweet = Tweet.create(content: params[:content])
