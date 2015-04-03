@@ -21,6 +21,7 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'httparty'
 gem 'dotenv'
+gem 'aws-sdk', '~> 2'
 
 group :test do
   gem 'shoulda-matchers'

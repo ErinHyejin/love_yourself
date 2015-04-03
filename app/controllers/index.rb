@@ -73,9 +73,9 @@ get '/shop' do
 
   if (params[:keyword])
     keyword = params[:keyword]
-    p response = HTTParty.get("http://free.apisigning.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=#{ENV['amazon_access_key_id']}&Operation=ItemSearch&Keywords=#{keyword}&ResponseGroup=Images,ItemAttributes&SearchIndex=All&MinimumPrice=4000&MaximumPrice=5000&Timestamp=#{Time.now.utc.iso8601}")
-  #&Signature=[Request Signature]
+    response = HTTParty.get("http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=#{ENV['amazon_access_key_id']}&Operation=ItemSearch&Keywords=#{keyword}&ResponseGroup=Images,ItemAttributes&SearchIndex=All&MinimumPrice=4000&MaximumPrice=5000&Timestamp=#{Time.now.utc.iso8601}")
   #
+  p response
     begin
       @items = response
       .parsed_response["ItemSearchResponse"]["Items"]["Item"]
