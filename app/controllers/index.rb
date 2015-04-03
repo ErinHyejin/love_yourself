@@ -56,6 +56,7 @@ put '/todos/:id/complete' do
   todo = Todo.find(params[:id])
   todo.completed = !todo.completed
   todo.save
+  coin_count(session[:id])
 
   content_type :json
   {id: todo.id, completed: todo.completed}.to_json

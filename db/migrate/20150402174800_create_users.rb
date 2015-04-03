@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name, :null => false
       t.string :email, :null => false
       t.string :password_hash, :null => false
+      t.integer :coin, default: 0
 
       t.timestamp
     end

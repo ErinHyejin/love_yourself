@@ -25,4 +25,15 @@ helpers do
     !current_user
   end
 
+  def coin_count(user_id)
+    user = User.where(id: user_id).first
+    user.coin += 1
+    todos = user.todos
+    completed_todos = todos.select do |todo|
+      todo.completed == true
+    end
+    completed_todos.length
+    user.save
+  end
+
 end
