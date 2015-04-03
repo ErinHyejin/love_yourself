@@ -1,0 +1,20 @@
+<form id="amazonsearch" action="/shop" method="GET">
+  <input type="text" name="keyword" placeholder="e.g. shoes" value="<%=params[:keyword]%>">
+  <input type="submit" class="addbutton" value="search">
+</form>
+
+<%=@error%>
+
+<%@items.each do |i|%>
+  <amazonitem>
+    <a href="<%=i[:url]%>">
+
+      <%=i[:title]%><BR>
+      <% if i[:price]%>
+        <%=i[:price]["FormattedPrice"]%>
+      <% end %><BR>
+      <center><img src="<%=i[:image]%>" border=1></center>
+    </a>
+  </amazonitem>
+<%end%>
+

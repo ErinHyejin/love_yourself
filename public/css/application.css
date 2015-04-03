@@ -1,0 +1,236 @@
+/* Import other css */
+@import url('reset.css');
+
+
+/* GENERAL ------------------------------------------------------------*/
+
+article, aside, canvas, hgroup,
+footer, header, nav, section, audio, video {
+  display: block;
+}
+
+.clearfix{ clear:both; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+body a{
+  text-decoration: none;
+
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+h2 {
+  color: rgb(190, 55, 14);
+  font-size: 30px;
+  line-height: 100px;
+}
+
+#logo{
+  display: inline-block;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+#logo:hover{ opacity: 0.8;}
+
+
+
+#main,
+footer,
+aside{ line-height: 1.5em; }
+
+
+.wrapper {
+  width: 940px;
+}
+
+.right{
+  float: right;
+}
+
+.left{
+  float: left;
+}
+
+
+.right:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.page-heading{
+  text-align: left;
+  margin-bottom: 15px;
+  background: url(../img/div-line.png) repeat-x center center;
+}
+
+.page-heading span{
+  padding: 0px 20px;
+  margin-left: 20px;
+}
+
+
+
+/* HOME ------------------------------------------------------------*/
+
+.home-block{
+  margin-bottom: 20px;
+}
+
+.home-block-heading{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-block-heading span{
+  padding: 0px 20px;
+}
+
+
+/* MAIN ------------------------------------------------------------*/
+
+#main{
+  margin: 0 auto;
+  width: 800px;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+box {
+  border: 1px solid black;
+  display: inline-block;
+  width: 290px;
+  height: 230px;
+  margin:25px 30px;
+  vertical-align: top;
+  padding: 20px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+#beauty {
+  background: url('../img/beauty.png');
+}
+
+#health {
+  background: url('../img/health.png');
+  background-repeat: no-repeat;
+  background-size: 350px 270px;
+}
+
+#entertainment{
+  background: url('../img/entertainment.png');
+  background-repeat: no-repeat;
+  background-size: 330px 280px;
+}
+
+#intelligence {
+  background: url('../img/intelligence.png');
+  background-repeat: no-repeat;
+  background-size: 330px 280px;
+}
+
+box category {
+  font-size: 30px;
+  color: rgb(190, 55, 14);
+  text-align: center;
+  text-shadow: 2px 2px #aaa;
+}
+
+.addbutton {
+  color: white;
+  background-color: rgb(255, 100, 0);
+}
+
+.button {
+  border: 1px solid gray;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: rgb(255, 100, 0);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  line-height: normal;
+}
+
+
+
+
+/*Items*/
+
+.item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+  list-style-type: none;
+  width: 100%;
+  border-left:    1px  solid #7d82b0;
+  border-right:   1px  solid #7d82b0;
+  border-bottom:  2px  solid #7d82b0;
+  border-top:     0px  solid #7d82b0;
+  display: block;
+  background-color: white;
+  opacity: 0.95;
+}
+
+.item .complete-button {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.item .value {
+  margin: 0 50px;
+  padding: 0 15px;
+}
+
+.item .delete-button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.item a {
+  color: #000;
+}
+
+.item .completed {
+  color: #f00;
+}
+
+#amazonsearch{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+}
+
+amazonitem {
+  display: inline-block;
+  width: 300px;
+  margin: 40px;
+  vertical-align: top;
+}

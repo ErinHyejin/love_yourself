@@ -1,0 +1,17 @@
+  <div>
+    <% @todos.each do |todo| %>
+      <% if todo.category == category %>
+        <li class='item' id="<%=todo.id%>">
+          <a href="/todos/<%=todo.id%>/complete" class='complete-button <%='completed' if todo.completed%>'>&#10004;</a>
+          <div class="description"><%= todo.todo_content %></div>
+          <a href="/todos/<%=todo.id%>/delete" class="delete-button">&#10008;</a>
+        </li>
+      <% end %>
+    <% end %>
+  </div>
+
+  <form action="/todos/new" method="POST">
+    <input type="text" name="todo_content" placeholder="e.g. run 2 miles"><br>
+    <input type="hidden" name="category" value = "<%=category%>">
+    <input type="submit" class="addbutton" value="Add New Todo">
+  </form>

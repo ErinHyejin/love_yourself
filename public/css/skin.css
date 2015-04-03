@@ -1,0 +1,61 @@
+/* GENERAL ------------------------------------------------------------*/
+
+/* Selection colours (easy to forget) */
+
+::selection     {background: #ea4c88; color: #fff; }
+::-moz-selection  {background: #ea4c88; color: #fff; }
+img::selection    {background: transparent;}
+img::-moz-selection {background: transparent;}
+body {-webkit-tap-highlight-color: #ea4c88;}
+
+/* HEADER ------------------------------------------------------------*/
+
+header{
+  background: #fff url(../../img/top-bg.jpg) top left repeat-x;
+  height: 250px;
+}
+
+#logo {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 50px;
+
+  display: block;
+  overflow: hidden;
+  padding: 100px 0px 7px 50px;
+
+  height: 100px;
+}
+/* NAVIGATION ------------------------------------------------------------*/
+#menu-strip {
+background:#be370e;
+float:left;
+height:40px;
+width:100%;
+}
+
+#top-menu {
+  margin:8px auto;
+  display: block;
+  width: 340px;
+}
+
+#top-menu li {
+display:inline;
+list-style-type:none;
+margin-left:20px;
+
+margin-right:20px;
+}
+
+#top-menu a {
+color:#fff;
+font-size:17px;
+text-decoration:none;
+}
+
+#top-menu a:hover {
+color:#ffa46d;
+}
+
+
+

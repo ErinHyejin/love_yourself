@@ -1,0 +1,15 @@
+<h2> Welcome </h2>
+<p>To login, enter your email and password below:</p>
+
+<% if session[:errors] %>
+  <div class="errors"><%= session[:errors] %></div>
+<% end %>
+
+  <form action="/login" method="post">
+    Email: <input type="text" name="email" placeholder="Email"><br>
+    Password: <input type="password" name="password" placeholder="Password">
+    <BR>
+    <a href="/signup" class="button">Sign Up</a>
+    <input type="submit" class="button" value="Log in">
+  </form>
+</div>
